@@ -1,5 +1,5 @@
 # CarModels-Project
-A project to help the company to store the data and display its car models to customers by using file processing .
+A project to help the company to store the data and display its car models to customers by using file processing.
 <br>
 ## ```Programming languages :```
 * [C++](https://github.com/Mariamibrahim88/CarModels-Project/blob/main/project.cpp)
