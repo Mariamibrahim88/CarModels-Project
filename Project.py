@@ -1,5 +1,5 @@
 def writeModel():
-     with open('t1.txt', 'a' ) as file:
+     with open('k1.txt', 'a' ) as file:
          c='y'
          while c=='y'or c=='Y':
              id=input('enter the id of car: ')
@@ -12,16 +12,19 @@ def writeModel():
  
  
 def readModel(): 
-    with open('t1.txt', 'r' ) as file:
-        print('Id\tName\tModel\tPrice\tColor')
+    with open('k1.txt', 'r' ) as file:
+        print('{:10s} {:10s} {:10s} {:10s} {:10s}'.format('ID', 'NAME', 'MODEL', 'PRICE', 'COLOR'))
+        #print('Id\tName\tModel\tPrice\tColor')
         for line in file:
-            print(line, end='')
+            #print(line, end='')
+            c= line.split("\t")
+            print('{:10s} {:10s} {:10s} {:10s} {:10s}'.format(c[0], c[1], c[2], c[3], c[4]))
  
  
 def searchByName():
      name = input('Enter the name of car to search: ')
      flag=False
-     with open ('t1.txt' , 'r' ) as file:
+     with open ('k1.txt' , 'r' ) as file:
           for line in file:
                s=line.split('\t')
                if name==s[1]:
@@ -34,10 +37,11 @@ def searchByName():
           if not flag:
                print('No cars are found !!')
  
+ 
 def searchById():
      id = input('Enter the id of car to search: ') 
      flag=False
-     with open ('t1.txt' , 'r' ) as file:
+     with open ('k1.txt' , 'r' ) as file:
           for line in file:
                s=line.split('\t')
                if id==s[0]:
@@ -63,8 +67,8 @@ def UpdateByName():
      import os
      id = input('Enter the id of record u want to update : ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if id==s[0]:
@@ -76,8 +80,8 @@ def UpdateByName():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')
  
@@ -86,8 +90,8 @@ def UpdateById():
      import os
      id = input('Enter the id of record u want to update : ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if id==s[0]:
@@ -99,8 +103,8 @@ def UpdateById():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')          
  
@@ -109,8 +113,8 @@ def UpdateByModel():
      import os
      id = input('Enter the id of record u want to update : ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if id==s[0]:
@@ -122,8 +126,8 @@ def UpdateByModel():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')
  
@@ -132,8 +136,8 @@ def UpdateByPrice():
      import os
      id = input('Enter the id of record u want to update : ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if id==s[0]:
@@ -145,20 +149,18 @@ def UpdateByPrice():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')          
- 
- 
  
  
 def UpdateByColor():
      import os
      id = input('Enter the id of record u want to update : ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if id==s[0]:
@@ -170,11 +172,10 @@ def UpdateByColor():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')
- 
  
  
 def Updateitems():
@@ -195,8 +196,8 @@ def UpdateAll():
      import os
      id = input('Enter the id of car you want to update : ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if id==s[0]:
@@ -212,8 +213,8 @@ def UpdateAll():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')
  
@@ -222,8 +223,8 @@ def DeleteById():
      import os
      id = input('Enter the id of car to delete: ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if id==s[0]:
@@ -233,8 +234,8 @@ def DeleteById():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')
  
@@ -243,8 +244,8 @@ def DeleteByName():
      import os
      name = input('Enter the name of car to delete: ')
      flag=False
-     file= open ('t1.txt' , 'r' )
-     fl= open ('t2.txt' , 'w' )
+     file= open ('k1.txt' , 'r' )
+     fl= open ('k2.txt' , 'w' )
      for line in file:
           s=line.split('\t')
           if name==s[1]:
@@ -254,8 +255,8 @@ def DeleteByName():
  
      file.close()
      fl.close()
-     os.remove('t1.txt')
-     os.rename('t2.txt','t1.txt')              
+     os.remove('k1.txt')
+     os.rename('k2.txt','k1.txt')              
      if not flag:
           print('No cars are found !!')          
  
@@ -268,12 +269,11 @@ def Delete():
           DeleteById()
  
  
- 
 # Actual program :
 print('---------------------------Welcome to Our Company------------------------------\n================================================================================\n-------------------------choose the operation to execute------------------------\n--------------------------------------------------------------------------- \n1: Add new model \t 2: Display all models \t 3: Search for model \n4: Delete model \t 5: Update model \t 6: Update items \n')                
 c='y'
  
-while c=='y':
+while c=='y' or c=='Y':
      x=input(">> ") 
      match x:
           case "1":
@@ -315,10 +315,13 @@ while c=='y':
                if c=='Y' or c=='y':
                     print('Enter the operation you want to execute: ')
  
- 
- 
           case _:
                print('invalid')
+        
+
+            
+    
+
         
         
 
