@@ -5,7 +5,7 @@ A project to help the company to store the data in file and display its car mode
 * [C++](https://github.com/Mariamibrahim88/CarModels-Project/blob/main/project.cpp)
 * [Python](https://github.com/Mariamibrahim88/CarModels-Project/blob/main/Project.py)
 
-## ```Main function using file proceesing :``` <br>
+## ```Main function :``` <br>
 1. Write data in file.
 2. Read data from file.
 3. Update data in file.
