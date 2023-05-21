@@ -1,3 +1,6 @@
+###################################### using Python #########################################
+
+
 def writeModel():
      with open('k1.txt', 'a' ) as file:
          c='y'
@@ -56,7 +59,7 @@ def searchById():
  
  
 def search():
-     a=input('do you want to search by name or id ?? ')
+     a=input('do you want to search by name or id ?? (n/i) ')
      if a=='N' or a=='n':
           searchByName()
      elif a=='I' or a=='i':
@@ -152,9 +155,9 @@ def UpdateByPrice():
      os.remove('k1.txt')
      os.rename('k2.txt','k1.txt')              
      if not flag:
-          print('No cars are found !!')          
+          print('No cars are found !!')        
  
- 
+
 def UpdateByColor():
      import os
      id = input('Enter the id of record u want to update : ')
@@ -262,7 +265,7 @@ def DeleteByName():
  
  
 def Delete():
-     a=input('do you want to delete by name or id ?? ')
+     a=input('do you want to delete by name or id ?? (n/i)')
      if a=='N' or a=='n':
           DeleteByName()
      elif a=='I' or a=='i':
@@ -270,48 +273,49 @@ def Delete():
  
  
 # Actual program :
-print('---------------------------Welcome to Our Company------------------------------\n================================================================================\n-------------------------choose the operation to execute------------------------\n--------------------------------------------------------------------------- \n1: Add new model \t 2: Display all models \t 3: Search for model \n4: Delete model \t 5: Update model \t 6: Update items \n')                
+ 
 c='y'
  
 while c=='y' or c=='Y':
-     x=input(">> ") 
+     print('\t\t----------------------------------------------------Welcome to Our Company------------------------------------------------\n\t\t===========================================================================================================================\n\t\t-----------------------------------------------choose the operation to execute--------------------------------------------\n\t--------------------------------------------------------------------------------------------------------------------------------------------- \n\t\t\t\t\t1: Add new model \t 2: Display all models \t 3: Search for model \n\t\t\t\t\t4: Delete model \t 5: Update model \t 6: Update items \n')               
+     x=input("Enter the operation you want to execute: ") 
      match x:
           case "1":
                writeModel()
-               c=input('do you want to continue ?? ')
+               c=input('do you want to continue ?? (y/n)')
                if c=='Y' or c=='y':
                     print('Enter the operation you want to execute: ')
  
           case "2":
                readModel()
-               c=input('do you want to continue ?? ')
+               c=input('do you want to continue ?? (y/n)')
                if c=='Y' or c=='y':
                     print('Enter the operation you want to execute: ')
  
           case "3":
                search()
-               c=input('do you want to continue ?? ')
+               c=input('do you want to continue ?? (y/n) ')
                if c=='Y' or c=='y':
                     print('Enter the operation you want to execute: ')
  
           case "4":
                Delete()
                print('Done')
-               c=input('do you want to continue ?? ')
+               c=input('do you want to continue ?? (y/n)')
                if c=='Y' or c=='y':
                     print('Enter the operation you want to execute: ') 
  
           case "5":
                UpdateAll()
                print('Done')
-               c=input('do you want to continue ?? ')
+               c=input('do you want to continue ?? (y/n) ')
                if c=='Y' or c=='y':
                     print('Enter the operation you want to execute: ')
  
           case "6":
                Updateitems()
                print('Done')
-               c=input('do you want to continue ?? ')
+               c=input('do you want to continue ?? (y/n) ')
                if c=='Y' or c=='y':
                     print('Enter the operation you want to execute: ')
  
@@ -321,7 +325,6 @@ while c=='y' or c=='Y':
 
             
     
-
         
         
 
