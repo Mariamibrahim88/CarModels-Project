@@ -1,3 +1,6 @@
+
+/////////////////////////////  using cpp /////////////////////////////
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -11,7 +14,7 @@ class car{
 
 void writeRecord(){
 fstream f;
-f.open("p1.txt",ios::out|ios::app);
+f.open("k1.txt",ios::out|ios::app);
 car c;
 
 if(f.is_open()){
@@ -28,7 +31,7 @@ cout<<"Enter color: ";
 cin>>c.color;
 cout<<"Enter price: ";
 cin>>c.price;
-cout<<"Enter record again (Y/N) : ";
+cout<<"Enter record again ?? (Y/N): ";
 cin>>ch;
 f.write((char*)&c,sizeof(c));
 }while (ch=='Y');
@@ -43,7 +46,7 @@ void readRecord(){
      int id=0;
     
     ifstream in;
-    in.open("p1.txt",ios::in);
+    in.open("k1.txt",ios::in);
      if(in.is_open()){
          
          cout<<"\t\t\t\t"<<"ID"<<"\t"<<setw(10)<<left<<" Name "<<setw(10)<<right<<"Model"<<setw(10)<<right<<" Color "<<setw(10)<<right<<" Price "<<endl;
@@ -73,7 +76,7 @@ void searchName(){
     bool found=false;
     
     ifstream in;
-    in.open("p1.txt",ios::in);
+    in.open("k1.txt",ios::in);
      if(in.is_open()){
  
         while (!in.eof())
@@ -103,7 +106,7 @@ void searchName(){
     bool found=false;
     
     ifstream in;
-    in.open("p1.txt",ios::in);
+    in.open("k1.txt",ios::in);
      if(in.is_open()){
  
         while (!in.eof())
@@ -147,7 +150,7 @@ void updateByID(){
 	int id;
 	cout<<"enter id of car"<<endl;
 	cin>>id;
-	f.open("p1.txt",ios::in|ios::out);
+	f.open("k1.txt",ios::in|ios::out);
 	if (f.is_open()) {
 	while(!f.eof()){
 		f.read((char*)&c,sizeof(c));
@@ -181,7 +184,7 @@ void updateByName(){
 	int id;
 	cout<<"enter id of record to update"<<endl;
 	cin>>id;
-	f.open("p1.txt",ios::in|ios::out);
+	f.open("k1.txt",ios::in|ios::out);
 	if (f.is_open()) {
 	while(!f.eof()){
 		f.read((char*)&c,sizeof(c));
@@ -216,7 +219,7 @@ void updateByModel(){
 	int id;
 	cout<<"enter id of record to update"<<endl;
 	cin>>id;
-	f.open("p1.txt",ios::in|ios::out);
+	f.open("k1.txt",ios::in|ios::out);
 	if (f.is_open()) {
 	while(!f.eof()){
 		f.read((char*)&c,sizeof(c));
@@ -252,7 +255,7 @@ void updateByColor(){
 	int id;
 	cout<<"enter id of record to update"<<endl;
 	cin>>id;
-	f.open("p1.txt",ios::in|ios::out);
+	f.open("k1.txt",ios::in|ios::out);
 	if (f.is_open()) {
 	while(!f.eof()){
 		f.read((char*)&c,sizeof(c));
@@ -286,7 +289,7 @@ void updateByPrice(){
 	int id;
 	cout<<"enter id of record to update"<<endl;
 	cin>>id;
-	f.open("p1.txt",ios::in|ios::out);
+	f.open("k1.txt",ios::in|ios::out);
 	if (f.is_open()) {
 	while(!f.eof()){
 		f.read((char*)&c,sizeof(c));
@@ -347,7 +350,7 @@ void UpdateAll(){
 	int id;
 	cout<<"enter id of record to update"<<endl;
 	cin>>id;
-	f.open("p1.txt",ios::in|ios::out);
+	f.open("k1.txt",ios::in|ios::out);
 	if (f.is_open()) {
 	while(!f.eof()){
 		f.read((char*)&c,sizeof(c));
@@ -385,8 +388,8 @@ void UpdateAll(){
 
 void DeleteByName(){
 	
-	ifstream in ("p1.txt",ios::in);
-	ofstream out ("p2.txt",ios::out);
+	ifstream in ("k1.txt",ios::in);
+	ofstream out ("k2.txt",ios::out);
 	
 	
 	if (in.is_open())
@@ -406,16 +409,16 @@ void DeleteByName(){
 	}
 	in.close();
 	out.close();
-	remove("p1.txt");
-	rename("p2.txt","p1.txt");
+	remove("k1.txt");
+	rename("k2.txt","k1.txt");
 }
 
 
 
 void DeleteById(){
 	
-	ifstream in ("p1.txt",ios::in);
-	ofstream out ("p2.txt",ios::out);
+	ifstream in ("k1.txt",ios::in);
+	ofstream out ("k2.txt",ios::out);
 	
 	
 	if (in.is_open())
@@ -434,8 +437,8 @@ void DeleteById(){
 	}
 	in.close();
 	out.close();
-	remove("p1.txt");
-	rename("p2.txt","p1.txt");
+	remove("k1.txt");
+	rename("k2.txt","k1.txt");
 }
 
 
@@ -467,9 +470,10 @@ cout<<"\t\t\t=======================Models Of Cars===================== \n";
  }
 int main(){
 	car c;
-	display();
+	
 	char a; 
 	x:
+	display();
 	cout<<"Enter number for operation you want to execute : "<<endl;
 	int num;
 	cin>>num;
